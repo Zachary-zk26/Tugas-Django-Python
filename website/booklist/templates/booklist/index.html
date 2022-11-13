@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Book</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.css' %}"> 
+    </head>
+    <body>
+        <img id="banner" src="{% static 'img/crud.jpg' %}" alt="">
+        <div id="menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/booklist/">Daftar Buku</a></li>
+            <li><a href="/guest/">Pengunjung</a></li>
+        </ul>
+        </div>
+
+        <!-- KELAS CONTAINER BOOTSTRAP -->
+<div class="container"> 
+        <br>
+        {% for tampungPost in TampungPostingan %} 
+        <h3>{{tampungPost.judul}}</h3>
+        <p>{{tampungPost.sinopsis}}</p>
+        <div class="alert alert-success" role="alert">Kategori : {{tampungPost.kategori}}</div>
+        {% endfor %}
+ </div>        
+
+        </ul>
+    </body>
+</html>
